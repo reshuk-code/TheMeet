@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= meet.name %> - TheMeet</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-100 min-h-screen">
+    <nav class="flex items-center justify-between px-8 py-4 bg-white shadow-md">
+        <a href="/"><div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6366f1" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-3A2.25 2.25 0 008.25 5.25V9m7.5 0v10.5A2.25 2.25 0 0113.5 21h-3a2.25 2.25 0 01-2.25-2.25V9m7.5 0h2.25A2.25 2.25 0 0121 11.25v1.5A2.25 2.25 0 0118.75 15H15.75m-7.5-6H3.75A2.25 2.25 0 001.5 11.25v1.5A2.25 2.25 0 003.75 15H6.75" /></svg>
+            <span class="text-2xl font-bold text-indigo-600 tracking-tight">TheMeet</span>
+        </div></a>
+        <span class="text-gray-700 font-semibold">Topic: <%= meet.topic %></span>
+    </nav>
+    <main class="flex flex-col items-center justify-center min-h-[80vh]">
+        <div class="flex flex-col md:flex-row gap-8 w-full max-w-4xl mt-10">
+            <div class="flex flex-col items-center bg-white rounded-2xl shadow-xl p-6 w-full md:w-1/2">
+                <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6366f1" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-3A2.25 2.25 0 008.25 5.25V9m7.5 0v10.5A2.25 2.25 0 0113.5 21h-3a2.25 2.25 0 01-2.25-2.25V9m7.5 0h2.25A2.25 2.25 0 0121 11.25v1.5A2.25 2.25 0 0118.75 15H15.75m-7.5-6H3.75A2.25 2.25 0 001.5 11.25v1.5A2.25 2.25 0 003.75 15H6.75" /></svg> Video Call</h2>
+                <div class="flex flex-col gap-4 w-full items-center">
+                    <video id="localVideo" autoplay muted class="rounded-lg border border-indigo-200 shadow w-full max-w-xs aspect-video bg-black"></video>
+                    <video id="remoteVideo" autoplay class="rounded-lg border border-indigo-200 shadow w-full max-w-xs aspect-video bg-black"></video>
+                    <div class="flex gap-4 mt-4">
+                        <button id="muteBtn" class="p-2 rounded-full bg-indigo-100 hover:bg-indigo-200 transition" title="Mute/Unmute">
+                            <svg id="muteIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6366f1" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9v6h4l5 5V4l-5 5H9z" /></svg>
+                        </button>
+                        <button id="cameraBtn" class="p-2 rounded-full bg-indigo-100 hover:bg-indigo-200 transition" title="Camera On/Off">
+                            <svg id="cameraIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6366f1" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6.75A2.25 2.25 0 016.25 4.5h7.5A2.25 2.25 0 0116 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-7.5A2.25 2.25 0 014 17.25V6.75z" /></svg>
+                        </button>
+                        <button id="leaveBtn" class="p-2 rounded-full bg-red-500 hover:bg-red-600 transition" title="Leave Call">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-3A2.25 2.25 0 008.25 5.25V9m7.5 0v10.5A2.25 2.25 0 0113.5 21h-3a2.25 2.25 0 01-2.25-2.25V9m7.5 0h2.25A2.25 2.25 0 0121 11.25v1.5A2.25 2.25 0 0118.75 15H15.75m-7.5-6H3.75A2.25 2.25 0 001.5 11.25v1.5A2.25 2.25 0 003.75 15H6.75" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col bg-white rounded-2xl shadow-xl p-6 w-full md:w-1/2">
+                <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6366f1" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75V19.5A2.25 2.25 0 006.75 21.75h10.5A2.25 2.25 0 0019.5 19.5V9.75" /></svg> Chat</h2>
+                <ul id="messages" class="flex-1 overflow-y-auto mb-4 space-y-2"></ul>
+                <form id="form" autocomplete="off" class="flex gap-2">
+                    <input id="input" placeholder="Type a message..." autofocus class="flex-1 px-4 py-2 rounded-lg border border-indigo-200 focus:ring-2 focus:ring-indigo-400 focus:outline-none" />
+                    <button class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition flex items-center gap-1" type="submit"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg> Send</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        const MEET_ID = "<%= meet._id %>";
+        const TURN_CONFIG = {
+            iceServers: [
+                {
+                    urls: "turn:relay1.expressturn.com:3480",
+                    username: "efPVTROUWWJ55A39IT",
+                    credential: "yP21Uvqy20rU7Zgj"
+                }
+            ]
+        };
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/simple-peer@9.11.1/simplepeer.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

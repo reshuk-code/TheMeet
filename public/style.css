@@ -1,0 +1,190 @@
+body {
+    font-family: 'Google Sans', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e9eafc 0%, #f5f6fa 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+.navbar {
+    background: #202124;
+    color: #fff;
+    padding: 18px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(60,64,67,0.08);
+}
+.navbar .btn {
+    background: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-left: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(60,64,67,0.08);
+}
+.navbar .btn:hover {
+    background: #3367d6;
+    box-shadow: 0 2px 8px rgba(60,64,67,0.16);
+}
+.container {
+    max-width: 800px;
+    margin: 48px auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(60,64,67,0.10);
+    padding: 40px 32px;
+}
+.meet-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 24px;
+}
+.meet-card {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 22px 28px;
+    min-width: 240px;
+    box-shadow: 0 2px 8px rgba(60,64,67,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1.5px solid #e0e3eb;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+.meet-card:hover {
+    box-shadow: 0 6px 24px rgba(60,64,67,0.16);
+    border: 1.5px solid #4285f4;
+}
+.meet-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    color: #202124;
+}
+.meet-card p {
+    margin: 0 0 8px 0;
+    color: #5f6368;
+}
+.meet-card .btn.join {
+    margin-top: 12px;
+    background: #34a853;
+    font-size: 15px;
+}
+.meet-card .btn.join:hover {
+    background: #0c7c3c;
+}
+.meet-form input, .meet-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1.5px solid #d2d2d2;
+    border-radius: 6px;
+    font-size: 17px;
+    background: #f8fafc;
+    transition: border 0.2s;
+}
+.meet-form input:focus, .meet-form select:focus {
+    border: 1.5px solid #4285f4;
+    outline: none;
+}
+.meet-form .btn {
+    width: 100%;
+    background: #4285f4;
+    font-size: 17px;
+    padding: 12px 0;
+}
+.meet-form .btn:hover {
+    background: #3367d6;
+}
+.error {
+    color: #d93025;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+#video-container {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+video {
+    width: 360px;
+    height: 230px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(60,64,67,0.08);
+}
+#chat-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #f1f3f4;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 24px;
+}
+#messages {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 12px;
+}
+#messages li {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(60,64,67,0.04);
+    font-size: 16px;
+}
+#form {
+    display: flex;
+    gap: 10px;
+}
+#input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1.5px solid #d2d2d2;
+    font-size: 17px;
+    background: #fff;
+    transition: border 0.2s;
+}
+#input:focus {
+    border: 1.5px solid #4285f4;
+    outline: none;
+}
+#form button {
+    background: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#form button:hover {
+    background: #3367d6;
+}
+@media (max-width: 900px) {
+    .container, #chat-container {
+        max-width: 98vw;
+        padding: 12px;
+    }
+    #video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    video {
+        width: 98vw;
+        max-width: 98vw;
+        height: 180px;
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Join Private Meet</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-purple-100 to-pink-50 min-h-screen relative overflow-x-hidden">
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur shadow flex items-center justify-between px-10 py-4">
+        <a href="/" class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-2 text-2xl font-extrabold text-indigo-600 tracking-tight">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6366f1" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-3A2.25 2.25 0 008.25 5.25V9m7.5 0v10.5A2.25 2.25 0 0113.5 21h-3a2.25 2.25 0 01-2.25-2.25V9m7.5 0h2.25A2.25 2.25 0 0121 11.25v1.5A2.25 2.25 0 0118.75 15H15.75m-7.5-6H3.75A2.25 2.25 0 001.5 11.25v1.5A2.25 2.25 0 003.75 15H6.75" /></svg>
+                TheMeet
+            </span>
+        </a>
+    </nav>
+    <main class="flex flex-col items-center justify-center min-h-[80vh]">
+        <div class="bg-white/80 rounded-2xl shadow-2xl p-12 w-full max-w-lg mt-16 backdrop-blur-lg border border-indigo-100">
+            <h2 class="text-2xl font-extrabold mb-8 text-gray-800 flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6366f1" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75A2.25 2.25 0 0014.25 4.5h-4.5A2.25 2.25 0 007.5 6.75v3.75m9 0V17.25A2.25 2.25 0 0114.25 19.5h-4.5A2.25 2.25 0 017.5 17.25V10.5m9 0h2.25A2.25 2.25 0 0121 12.75v1.5A2.25 2.25 0 0118.75 16.5H16.5m-9-6H3.75A2.25 2.25 0 001.5 12.75v1.5A2.25 2.25 0 003.75 16.5H6.75" /></svg> Join Private Meet</h2>
+            <% if (typeof error !== 'undefined') { %>
+                <p class="text-red-600 font-semibold mb-3 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2.25m0 4.5h.008v.008H12v-.008zm0 0a.75.75 0 100-1.5.75.75 0 000 1.5z" /></svg> <%= error %></p>
+            <% } %>
+            <form action="/private" method="POST" class="space-y-7">
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Enter Meet Code</label>
+                    <input type="text" name="code" placeholder="Enter Meet Code" value="<%= code %>" required autofocus class="w-full px-5 py-3 rounded-xl border border-indigo-200 focus:ring-2 focus:ring-indigo-400 focus:outline-none bg-indigo-50/50 shadow" />
+                </div>
+                <button type="submit" class="w-full px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold shadow hover:scale-105 hover:shadow-lg transition flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75A2.25 2.25 0 0014.25 4.5h-4.5A2.25 2.25 0 007.5 6.75v3.75m9 0V17.25A2.25 2.25 0 0114.25 19.5h-4.5A2.25 2.25 0 017.5 17.25V10.5m9 0h2.25A2.25 2.25 0 0121 12.75v1.5A2.25 2.25 0 0118.75 16.5H16.5m-9-6H3.75A2.25 2.25 0 001.5 12.75v1.5A2.25 2.25 0 003.75 16.5H6.75" /></svg> Join</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
