@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/themeet', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://reshuksapkota2007:UF67TwWd8i7rC9XU@cluster0.jzxtstl.mongodb.net/themeet', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
 
