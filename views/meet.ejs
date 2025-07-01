@@ -49,9 +49,20 @@
         const TURN_CONFIG = {
             iceServers: [
                 {
-                    urls: "turn:relay1.expressturn.com:3480",
-                    username: "efPVTROUWWJ55A39IT",
-                    credential: "yP21Uvqy20rU7Zgj"
+                    urls: [
+                        "turn:themeet.metered.live:80",
+                        "turn:themeet.metered.live:443",
+                        "turn:themeet.metered.live:3478"
+                    ],
+                    username: "themeet.metered.live",
+                    credential: "QJJloJzE2tw_Cr1ECgRNfom-_8Xq0ThsIWSaFxC0hSpkjpZO"
+                },
+                {
+                    urls: [
+                        "stun:themeet.metered.live:80",
+                        "stun:themeet.metered.live:443",
+                        "stun:themeet.metered.live:3478"
+                    ]
                 }
             ]
         };
